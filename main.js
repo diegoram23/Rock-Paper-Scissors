@@ -1,21 +1,19 @@
-let playerScore = 0
-let computerScore = 0
 
-function computerChoice() {
-    const arrayOfChoices = ["rock", "paper", "scissors"]
-    const randomChoice = Math.floor(Math.random() * 3)
-    const compChoice = arrayOfChoices[randomChoice]
-    return compChoice;
+//Users beginning score values.
+let computerScore = 0; 
+let playerScore = 0;
+
+//Computers function on how it chooses randomly.
+function getComputerChoice() {
+    const choices = ["rock", "paper", "scissors"]
+    const randomChoice = Math.floor(Math.random() * choices.length)
+    return choices[randomChoice]
 }
 
-
+//Function on how scores are determined
 function gameRound(playerSelection, computerSelection) {
-    if (playerSelection === "rock" && computerSelection === "rock") {
-        return "You tied! Both choosed rock."
-    } else if (playerSelection === "paper" && computerSelection === "paper") {
-        return "You tied! Both choosed paper."
-    } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        return "You tied! Both choosed scissors."
+    if (playerSelection === computerSelection) {
+        return `You tied! Both choosed ${playerSelection}.`
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore++
         return "You lost! Paper beats rock."
@@ -37,23 +35,19 @@ function gameRound(playerSelection, computerSelection) {
     }
 }
 
-
-const playerSelection = "rock";
-const computerSelection = computerChoice()
-
+//Function and loop to allow you to take 5 turns and determine winner.
 function game() {
-
     for (let i = 0; i < 5; i++) {
-
-        gameRound(playerSelection, computerSelection)
+        const playerSelection = prompt("Choose your weapon.", "Rock, paper, or scissors").toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log("", gameRound(playerSelection, computerSelection))
     }
     if (playerScore > computerScore) {
-        return "You win!";
-    } else if (computerScore > playerScore) {
-        return "You lost.";
+        return "You won. You beat the computer";
+    } else if (playerScore < computerScore) {
+        return "You lost. The computer beat you";
     } else {
-        return "You tied with computer.";
+        return "The final score is a draw."
     }
 }
-
 console.log(game())
