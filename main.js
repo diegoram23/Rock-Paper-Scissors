@@ -1,5 +1,5 @@
 
-//Users beginning score values.
+// Variables
 let computerScore = 0;
 let playerScore = 0;
 const rockButton = document.getElementById("rock")
@@ -14,14 +14,14 @@ const currentComputerScore = document.getElementById("computerscore")
 const playAgain = document.getElementById("play-again")
 
 
-//Computers function on how it chooses randomly.
+// How computer generates random choice
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"]
     const randomChoice = Math.floor(Math.random() * choices.length)
     return choices[randomChoice]
 }
 
-//Function on how scores are determined
+// How scores are determined
 function gameRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         p.textContent = `Tie, both chose ${playerSelection}.`
@@ -53,28 +53,38 @@ function gameRound(playerSelection, computerSelection) {
     }
 }
 
+// Keeps track of scores
 function updateScores(playerScore, computerScore) {
     currentComputerScore.textContent = `Computer: ${computerScore}`
     currentPlayerScore.textContent = `Player: ${playerScore}`
 
 }
 
-// Function checks for winner
+
+// Checks for winner
 function checkWinner(playerScore, computerScore) {
     if (playerScore === 5) {
-        h2.textContent = `Nice! You won ${playerScore} to ${computerScore}!`
+        h2.textContent = `Nice! You won ${playerScore} to ${computerScore}`
         winner.appendChild(h2)
         endgame()
+        p.textContent = ""
+        result.appendChild(p)
+
     } else if (computerScore === 5) {
         h2.textContent = `Ouch! The computer beat you ${computerScore} to ${playerScore}`
         winner.appendChild(h2)
         endgame()
+        p.textContent = ""
+        result.appendChild(p)
     } else if (playerScore === 5 && computerScore === 5) {
         h2.textContent = `It's a tie! ${playerScore} to ${computerScore} Give it another shot`
         winner.appendChild(h2)
         endgame()
+        p.textContent = ""
+        result.appendChild(p)
     }
 }
+
 
 // Rock button event listener  
 rockButton.addEventListener('click', () => {
@@ -85,6 +95,7 @@ rockButton.addEventListener('click', () => {
     updateScores(playerScore, computerScore)
 });
 
+
 // Paper button event listener  
 paperButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice()
@@ -93,6 +104,7 @@ paperButton.addEventListener('click', () => {
     checkWinner(playerScore, computerScore)
     updateScores(playerScore, computerScore)
 });
+
 
 // Scissors button event listener  
 scissorsButton.addEventListener('click', () => {
@@ -104,6 +116,7 @@ scissorsButton.addEventListener('click', () => {
 });
 
 
+// Stops game when someone reaches 5 points
 function endgame() {
     scissorsButton.style.visibility = 'hidden'
     rockButton.style.visibility = 'hidden'
@@ -113,24 +126,8 @@ function endgame() {
 
 }
 
+// Restart game/refresh page
 playAgain.addEventListener('click', () => {
     window.location.reload()
 })
 
-//Function and loop to allow you to take 5 turns and determine winner.
-/*function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Choose your weapon.", "Rock, paper, or scissors").toLowerCase();
-        const computerSelection = getComputerChoice();
-        console.log("", gameRound(playerSelection, computerSelection))
-    }
-    if (playerScore > computerScore) {
-        return "You won. You beat the computer";
-    } else if (playerScore < computerScore) {
-        return "You lost. The computer beat you";
-    } else {
-        return "The final score is a draw."
-    }
-}
-console.log(game())
-*/
