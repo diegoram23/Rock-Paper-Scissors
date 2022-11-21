@@ -1,6 +1,6 @@
-body {
+    body {
     margin: 0;
-    padding: 45px 60px;
+    padding: 5px 10px;
     font-family: 'Schoolbell', cursive;
     background: url(images/background.jpg);
     background-size: cover;
@@ -10,7 +10,9 @@ body {
     justify-content: center;
 }
 
+
 .title {
+    margin-top: 10px;
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -20,6 +22,7 @@ body {
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 4px 2px #313638;
+    padding: 10px 35px;
 }
 
 .buttons-container {
@@ -27,11 +30,10 @@ body {
     box-sizing: border-box;
     margin-top: 50px;
     border: 2px solid black;
-    padding: 60px 50px;
+    padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 500px;
 }
 
 #rock, #paper, #scissors{
