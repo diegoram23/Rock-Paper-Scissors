@@ -11,7 +11,7 @@ const h2 = document.createElement('h2')
 const winner = document.querySelector(".winner")
 const currentPlayerScore = document.getElementById("playerscore")
 const currentComputerScore = document.getElementById("computerscore")
-
+const playAgain = document.getElementById("play-again")
 
 
 //Computers function on how it chooses randomly.
@@ -64,12 +64,15 @@ function checkWinner(playerScore, computerScore) {
     if (playerScore === 5) {
         h2.textContent = `Nice! You won ${playerScore} to ${computerScore}!`
         winner.appendChild(h2)
+        endgame()
     } else if (computerScore === 5) {
         h2.textContent = `Ouch! The computer beat you ${computerScore} to ${playerScore}`
         winner.appendChild(h2)
+        endgame()
     } else if (playerScore === 5 && computerScore === 5) {
         h2.textContent = `It's a tie! ${playerScore} to ${computerScore} Give it another shot`
         winner.appendChild(h2)
+        endgame()
     }
 }
 
@@ -101,7 +104,18 @@ scissorsButton.addEventListener('click', () => {
 });
 
 
+function endgame() {
+    scissorsButton.style.visibility = 'hidden'
+    rockButton.style.visibility = 'hidden'
+    paperButton.style.visibility = 'hidden'
+    document.getElementById('play-again').innerHTML = "<button>Play again</button>"
 
+
+}
+
+playAgain.addEventListener('click', () => {
+    window.location.reload()
+})
 
 //Function and loop to allow you to take 5 turns and determine winner.
 /*function game() {
