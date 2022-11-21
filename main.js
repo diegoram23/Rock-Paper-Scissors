@@ -12,6 +12,10 @@ const winner = document.querySelector(".winner")
 const currentPlayerScore = document.getElementById("playerscore")
 const currentComputerScore = document.getElementById("computerscore")
 const playAgain = document.getElementById("play-again")
+const gameWon = new Audio("audio/gameWon.mp3")
+const gameLost = new Audio("audio/gameLost.wav")
+const iconTouch = new Audio("audio/iconTouch.wav")
+
 
 
 // How computer generates random choice
@@ -69,6 +73,7 @@ function checkWinner(playerScore, computerScore) {
         endgame()
         p.textContent = ""
         result.appendChild(p)
+        gameWon.play()
 
     } else if (computerScore === 5) {
         h2.textContent = `Ouch! The computer beat you ${computerScore} to ${playerScore}`
@@ -76,14 +81,17 @@ function checkWinner(playerScore, computerScore) {
         endgame()
         p.textContent = ""
         result.appendChild(p)
+        gameLost.play()
     } else if (playerScore === 5 && computerScore === 5) {
         h2.textContent = `It's a tie! ${playerScore} to ${computerScore} Give it another shot`
         winner.appendChild(h2)
         endgame()
         p.textContent = ""
         result.appendChild(p)
+        gameLost.play()
     }
 }
+
 
 
 // Rock button event listener  
@@ -93,6 +101,8 @@ rockButton.addEventListener('click', () => {
     gameRound(playerSelection, computerSelection)
     checkWinner(playerScore, computerScore)
     updateScores(playerScore, computerScore)
+    iconTouch.currentTime = 0;
+    iconTouch.play()
 });
 
 
@@ -103,6 +113,8 @@ paperButton.addEventListener('click', () => {
     gameRound(playerSelection, computerSelection)
     checkWinner(playerScore, computerScore)
     updateScores(playerScore, computerScore)
+    iconTouch.currentTime = 0;
+    iconTouch.play()
 });
 
 
@@ -113,6 +125,8 @@ scissorsButton.addEventListener('click', () => {
     gameRound(playerSelection, computerSelection)
     checkWinner(playerScore, computerScore)
     updateScores(playerScore, computerScore)
+    iconTouch.currentTime = 0;
+    iconTouch.play()
 });
 
 
