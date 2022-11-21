@@ -48,7 +48,8 @@ body {
     border-radius: 10px;
 }
 
-#rock:hover, #paper:hover, #scissors:hover {
+#rock:hover, #paper:hover, #scissors:hover, #rock:active, #paper:active, #scissors:active
+    {
     border-color: rgb(0, 225, 255);
     transform: scale(1.2);
 }
@@ -97,7 +98,7 @@ img {
     cursor: pointer;
 }
 
-#play-again:hover {
+#play-again:hover, #play-again:active {
     border: rgb(0, 225, 255) 2px solid;
     transform: scale(1.2);
 }
