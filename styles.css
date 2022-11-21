@@ -8,11 +8,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 
 .title {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 37px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -49,21 +50,16 @@ body {
     border-radius: 10px;
 }
 
-@media (hover: hover) {
+#rock:active, #paper:active, #scissors:active {
+    border: rgb(0, 225, 255)2px solid;
 
-    #rock:hover, #paper:hover, #scissors:hover {
-    border-color: rgb(0, 225, 255);
+}
+ #rock:hover, #paper:hover, #scissors:hover {
     transform: scale(1.2);
 }
- 
-}
 
-/* #rock:active, #paper:active, #scissors:active
-    {
-    border-color: rgb(0, 225, 255);
-    transform: scale(1.2);
-}
-*/
+
+
 img {
    height: 60px;
    width: 50px;
@@ -83,7 +79,7 @@ img {
 }
 
 .result {
-    font-size: 22px;
+    font-size: 19px;
     font-weight: ;
     text-shadow: 2px 2px 0px #313638;
     color: #eeeeee;
@@ -92,8 +88,8 @@ img {
     margin-top: 50px;
     text-align: center;
     box-shadow: 4px 2px #313638;
-    padding: 0 0px;
     max-width: 340px;
+    padding: 0 8px;
 }
 
 #play-again {
@@ -110,13 +106,13 @@ img {
     cursor: pointer;
 }
 
-#play-again:hover, #play-again:active {
+#play-again:hover {
     border: rgb(0, 225, 255) 2px solid;
     transform: scale(1.2);
 }
 
 .winner {
-    font-size: 16px;
+    font-size: 15px;
     background: #eeeeee;
     font-weight: ;
     border-radius: 10px;
@@ -126,4 +122,19 @@ img {
     text-align: center;
     padding: 0 10px;
     max-width: 340px;
+}
+
+.container-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+.footer {
+    margin-top: 0;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 0px 0px 4px white;
+    color: #313638;
 }
