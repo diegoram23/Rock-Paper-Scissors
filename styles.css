@@ -41,6 +41,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    max-width: 340px;
     
 }
 
@@ -48,12 +49,21 @@ body {
     border-radius: 10px;
 }
 
-#rock:hover, #paper:hover, #scissors:hover, #rock:active, #paper:active, #scissors:active
+@media (hover: hover) {
+
+    #rock:hover, #paper:hover, #scissors:hover {
+    border-color: rgb(0, 225, 255);
+    transform: scale(1.2);
+}
+ 
+}
+
+/* #rock:active, #paper:active, #scissors:active
     {
     border-color: rgb(0, 225, 255);
     transform: scale(1.2);
 }
-
+*/
 img {
    height: 60px;
    width: 50px;
@@ -69,23 +79,25 @@ img {
     border-bottom: 4px solid #313638;
     color: #313638;
     max-width: 155px;
+    margin-top: 15px;
 }
 
-.final-scores {
-    font-size: 20px;
+.result {
+    font-size: 22px;
     font-weight: ;
     text-shadow: 2px 2px 0px #313638;
     color: #eeeeee;
     background: #936c46;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 50px;
     text-align: center;
     box-shadow: 4px 2px #313638;
-
+    padding: 0 0px;
+    max-width: 340px;
 }
 
 #play-again {
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
     text-shadow: 1px 1px px #313638;
     background: #eeeeee;
@@ -104,11 +116,14 @@ img {
 }
 
 .winner {
-    font-size: 15px;
+    font-size: 16px;
     background: #eeeeee;
     font-weight: ;
     border-radius: 10px;
     color: #936c46;
     box-shadow: 3px 3px #936c46;
     text-shadow: 1px 1px 90px #313638;
+    text-align: center;
+    padding: 0 10px;
+    max-width: 340px;
 }
