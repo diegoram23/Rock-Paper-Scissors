@@ -13,9 +13,9 @@ body {
 
 .title {
     margin-top: 10px;
-    font-size: 40px;
+    font-size: 37px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #eeeeee;
     text-shadow: 5px 5px 5px #313638;
     background-color: #936c46;
@@ -28,7 +28,7 @@ body {
 }
 
 .rules {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     font-weight: ;
     margin: 0;
@@ -37,7 +37,6 @@ body {
 .buttons-container {
     flex: 1;
     margin-top: 40px;
-    border: 2px solid black;
     padding: 10px;
     display: flex;
     justify-content: space-around;
@@ -49,11 +48,18 @@ body {
     border-radius: 10px;
 }
 
-img {
-   min-height: 60px;
-   max-width: 50px;
-   padding: 5px;
+#rock:hover, #paper:hover, #scissors:hover {
+    border-color: rgb(0, 225, 255);
+    transform: scale(1.2);
 }
+
+img {
+   height: 60px;
+   width: 50px;
+   padding: 5px;
+   cursor: pointer;
+}
+
 
 #playerscore, #computerscore {
     font-size: 28px;
@@ -72,10 +78,36 @@ img {
     background: #936c46;
     border-radius: 10px;
     margin-top: 10px;
-    line-break: normal;
     text-align: center;
+    box-shadow: 4px 2px #313638;
+
+}
+
+#play-again {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px px #313638;
+    background: #eeeeee;
+    color: #936c46;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    box-shadow: 3px 3px #936c46;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+#play-again:hover {
+    border: rgb(0, 225, 255) 2px solid;
+    transform: scale(1.2);
 }
 
 .winner {
     font-size: 15px;
+    background: #eeeeee;
+    font-weight: ;
+    border-radius: 10px;
+    color: #936c46;
+    box-shadow: 3px 3px #936c46;
+    text-shadow: 1px 1px 90px #313638;
 }

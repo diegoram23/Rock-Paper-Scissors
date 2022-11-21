@@ -121,9 +121,7 @@ function endgame() {
     scissorsButton.style.visibility = 'hidden'
     rockButton.style.visibility = 'hidden'
     paperButton.style.visibility = 'hidden'
-    document.getElementById('play-again').innerHTML = "<button>Play again</button>"
-
-
+    document.getElementById('play-again').innerHTML = "<div>Play again!</div>"
 }
 
 // Restart game/refresh page
