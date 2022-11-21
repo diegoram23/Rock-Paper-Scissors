@@ -24,31 +24,31 @@ function getComputerChoice() {
 //Function on how scores are determined
 function gameRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        p.textContent = `You tied! Both choosed ${playerSelection}.`
+        p.textContent = `Tie, both chose ${playerSelection}.`
         result.appendChild(p)
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore++
-        p.textContent = "You lost! Paper beats rock."
+        p.textContent = "The computer scored, paper beats rock."
         result.appendChild(p)
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++
-        p.textContent = "You won! Rock beats scissors."
+        p.textContent = "You scored, rock beats scissors."
         result.appendChild(p)
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++
-        p.textContent = "You won! Paper beats rock."
+        p.textContent = "You scored, paper beats rock."
         result.appendChild(p)
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         computerScore++
-        p.textContent = "You lost! Scissors beats paper."
+        p.textContent = "The computer scored, scissors beats paper."
         result.appendChild(p)
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         computerScore++
-        p.textContent = "You lost! Rock beats scissors."
+        p.textContent = "The computer scored, rock beats scissors."
         result.appendChild(p)
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++
-        p.textContent = "You won! Scissors beats paper."
+        p.textContent = "You scored, scissors beats paper."
         result.appendChild(p)
     }
 }
