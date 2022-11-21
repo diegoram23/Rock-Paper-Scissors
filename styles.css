@@ -52,12 +52,11 @@ body {
 
 #rock:active, #paper:active, #scissors:active {
     border: rgb(0, 225, 255)2px solid;
-
 }
- #rock:hover, #paper:hover, #scissors:hover {
+ 
+#rock:hover, #paper:hover, #scissors:hover {
     transform: scale(1.2);
 }
-
 
 
 img {
@@ -104,6 +103,7 @@ img {
     box-shadow: 3px 3px #936c46;
     max-width: 200px;
     cursor: pointer;
+    transition:  2s;
 }
 
 #play-again:hover {
@@ -113,11 +113,11 @@ img {
 
 .winner {
     font-size: 15px;
-    background: #eeeeee;
+    background: #936c46;
     font-weight: ;
     border-radius: 10px;
-    color: #936c46;
-    box-shadow: 3px 3px #936c46;
+    color: #eeeeee;
+    box-shadow: 3px 3px #313638;
     text-shadow: 1px 1px 90px #313638;
     text-align: center;
     padding: 0 10px;

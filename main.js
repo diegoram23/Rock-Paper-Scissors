@@ -126,6 +126,7 @@ function endgame() {
 
 // Restart game/refresh page
 playAgain.addEventListener('click', () => {
+    playAgain.style.transition = "2s"
     window.location.reload()
 })
 
